@@ -57,3 +57,45 @@ Python é uma linguagem de programação interpretada e de alto nível. Foi cria
 
 # Contribuindo
 Se você tiver alguma sugestão ou quiser contribuir com mais exemplos, tutoriais ou recursos, sinta-se à vontade para fazer um fork deste repositório e enviar um pull request com suas alterações. Vamos trabalhar juntos para tornar este kit cada vez mais completo e útil para a comunidade de iniciantes em Python!
+
+# Criando Módulos
+Em Python, um módulo é um arquivo contendo definições de funções, classes e variáveis. Os módulos podem ser importados em outros arquivos Python e reutilizados em diferentes projetos.
+
+Para criar um módulo em Python, basta criar um arquivo com extensão .py contendo as definições que deseja exportar. Por exemplo, suponha que você deseja criar um módulo chamado operacoes que contém uma função para calcular a soma de dois números. Para isso, crie um arquivo chamado operacoes.py com o seguinte conteúdo:
+
+def soma(a, b):
+    return a + b
+    
+Para usar a função soma em outro arquivo Python, basta importar o módulo operacoes e chamar a função: 
+
+import operacoes
+
+resultado = operacoes.soma(2, 3)
+print(resultado)  # Saída: 5
+
+Você também pode importar apenas a função soma do módulo operacoes usando a seguinte sintaxe:
+
+from operacoes import soma
+
+resultado = soma(2, 3)
+print(resultado)  # Saída: 5
+
+## Pacotes
+Em Python, um pacote é uma coleção de módulos relacionados organizados em um diretório. Para criar um pacote em Python, basta criar um diretório com um arquivo especial __init__.py dentro dele. Este arquivo é executado quando o pacote é importado e pode conter código de inicialização para o pacote.
+
+Por exemplo, suponha que você deseja criar um pacote chamado geometria que contém módulos para cálculos geométricos. Para isso, crie um diretório chamado geometria e um arquivo __init__.py vazio dentro dele. Em seguida, crie um arquivo chamado retangulo.py dentro do diretório geometria com o seguinte conteúdo:
+
+def area(base, altura):
+    return base * altura
+    
+Para usar a função area do módulo retangulo do pacote geometria, basta importar o pacote e o módulo da seguinte forma:
+
+import geometria.retangulo
+
+resultado = geometria.retangulo.area(2, 3)
+print(resultado)  # Saída: 6
+
+Você também pode importar apenas a função area do módulo retangulo do pacote geometria da seguinte forma:
+
+resultado = area(2, 3)
+print(resultado)  # Saída: 6
